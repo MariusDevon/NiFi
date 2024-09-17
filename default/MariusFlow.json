@@ -11,7 +11,37 @@
   "flowContents" : {
     "comments" : "",
     "componentType" : "PROCESS_GROUP",
-    "connections" : [ ],
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "daad3483-ab0b-3dc8-8643-da149b9edb70",
+        "name" : "AttributeRollingWindow",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2a975a52-3b29-3deb-bd94-86bf4dbdf3ae",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "connected", "success", "binary message", "text message" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "5759274c-daa4-3b17-b998-2b00b277d720",
+        "name" : "ConnectWebSocket",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
@@ -37,6 +67,54 @@
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
+        "artifact" : "nifi-websocket-processors-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-M4"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "5759274c-daa4-3b17-b998-2b00b277d720",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ConnectWebSocket",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1176.0,
+        "y" : -656.0
+      },
+      "properties" : { },
+      "propertyDescriptors" : {
+        "websocket-client-controller-service" : {
+          "displayName" : "WebSocket Client ControllerService",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "websocket-client-controller-service",
+          "sensitive" : false
+        },
+        "websocket-client-id" : {
+          "displayName" : "WebSocket Client Id",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "websocket-client-id",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.websocket.ConnectWebSocket",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
         "artifact" : "nifi-stateful-analysis-nar",
         "group" : "org.apache.nifi",
         "version" : "2.0.0-M4"
@@ -51,8 +129,8 @@
       "name" : "AttributeRollingWindow",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -944.7916717529297,
-        "y" : -438.4916687011719
+        "x" : -904.0,
+        "y" : -368.0
       },
       "properties" : { },
       "propertyDescriptors" : {
