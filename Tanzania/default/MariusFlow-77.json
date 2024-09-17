@@ -165,6 +165,73 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.stateful.analysis.AttributeRollingWindow",
       "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-M4"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "11fce78e-5e1e-3d9a-8136-491100eab108",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "CompressContent",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1336.0,
+        "y" : -256.0
+      },
+      "properties" : {
+        "Compression Format" : "use mime.type attribute",
+        "Mode" : "compress",
+        "Compression Level" : "1",
+        "Update Filename" : "false"
+      },
+      "propertyDescriptors" : {
+        "Compression Format" : {
+          "displayName" : "Compression Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Compression Format",
+          "sensitive" : false
+        },
+        "Mode" : {
+          "displayName" : "Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mode",
+          "sensitive" : false
+        },
+        "Compression Level" : {
+          "displayName" : "Compression Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Compression Level",
+          "sensitive" : false
+        },
+        "Update Filename" : {
+          "displayName" : "Update Filename",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Update Filename",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.CompressContent",
+      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
